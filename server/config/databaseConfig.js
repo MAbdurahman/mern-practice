@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const connectDatabase = async () => {
 	try {
@@ -6,6 +6,7 @@ const connectDatabase = async () => {
 			useUnifiedTopology: true,
 			useNewUrlParser: true,
 			useCreateIndex: true,
+         useFindAndModify: false
 		});
 
 		console.log(
@@ -17,4 +18,5 @@ const connectDatabase = async () => {
 	}
 };
 
-export default connectDatabase;
+module.exports = connectDatabase;
+

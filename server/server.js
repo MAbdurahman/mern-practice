@@ -4,6 +4,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const colors = require('colors');
 const morgan = require('morgan');
+const connectDatabase = require('./config/databaseConfig')
 
 
 //**************** variables ****************//
@@ -14,8 +15,8 @@ const NODE_ENV = process.env.NODE_ENV;
 
 //**************** configuration setup ****************//
 dotenv.config();
-
-
+colors.enable();
+connectDatabase();
 //**************** middleware****************//
 if (process.env.NODE_ENV === 'DEVELOPMENT') {
 	app.use(morgan('dev'));

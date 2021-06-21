@@ -1,0 +1,27 @@
+{
+	"name": "mern-practice",
+	"version": "1.0.0",
+	"description": "MERN Stack Application",
+	"main": "server.js",
+	"repository": "https://github.com/MAbdurahman/mern-practice.git",
+	"author": "Mahdi Abdurrahman <mdbdrrhm@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"start": "node server/server.js",
+		"server": "SET NODE_ENV=DEVELOPMENT& nodemon server/server.js",
+		"client": "npm start --prefix client",
+		"dev": "concurrently \"npm run server\" \"npm run client\"",
+		"prod": "SET NODE_ENV=PRODUCTION& nodemon server/server"
+	},
+	"nodemonConfig": {
+		"delay": "2000"
+	},
+	"devDependencies": {
+		"concurrently": "^6.2.0"
+	},
+	"dependencies": {
+		"colors": "^1.4.0",
+		"dotenv": "^10.0.0",
+		"morgan": "^1.10.0"
+	}
+}

@@ -6,6 +6,8 @@ const colors = require('colors');
 const morgan = require('morgan');
 const connectDatabase = require('./config/databaseConfig')
 
+const userRoutes = require('./routes/userRoutes')
+
 
 //**************** variables ****************//
 const app = express();
@@ -23,11 +25,15 @@ if (process.env.NODE_ENV === 'DEVELOPMENT') {
 }
 app.use(express.json());
 
+app.use('/api/v1.0/users', userRoutes);
 
 //**************** routes****************//
 app.get('/', (req, res) => {
 	res.send('API is at Home');
 });
+
+
+
 
 
 
